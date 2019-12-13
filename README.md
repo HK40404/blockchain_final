@@ -8,6 +8,6 @@
 2. 进入django目录，执行
        $ python manage.py runserver
 
-然后在浏览器中访问http://localhost:8000/login，即可访问app
+然后在浏览器中访问http://localhost:8000/login ，即可访问app
 
    
