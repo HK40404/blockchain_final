@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新建账款</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'createReceipt.css' %}">
+</head>
+<body>
+
+    <div class="create-div">
+    {% if error_message %}<p class="warning"><strong>{{ error_message }}</strong></p>{% endif %}
+    
+        <form action="{% url 'createReceipt'  %}" method="post">
+            {% csrf_token %}
+            <input class="create-text" type="text" name="title" placeholder="账款标题"/><br/>
+            <input class="create-text" type="text" name="from" placeholder="欠款公司"/><br/>
+            <input class="create-text" type="text" name="to" placeholder="收款公司"/><br/>
+            <input class="create-text" type="text" name="amount" placeholder="数目"/><br/>
+            <input class="create-text" type="text" name="lasttime" placeholder="持续时间"/><br/>
+            <input class="create-text" type="text" name="comment" placeholder="补充"/><br/>
+            <p>银行确认:</p>
+            <input class="create-text" type="text" name="v" placeholder="v"/><br/>
+            <input class="create-text" type="text" name="r" placeholder="r"/><br/>
+            <input class="create-text" type="text" name="s" placeholder="s"/><br/>
+            
+            <input class="create-button" type="submit" value="创建"/>
+        </form>
+    </div>
+    <div class="menu-link"><a href="menu">返回</a></div>
+</body>

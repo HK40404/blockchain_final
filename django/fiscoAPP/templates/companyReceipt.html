@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>公司账款</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'companyReceipt.css' %}">
+</head>
+<body>
+    <div class="query-div">
+        {% if receipts %}
+        <ul>
+        {% for receipt in receipts %}
+            <li><a>{{ receipt }}</a></li>
+        {% endfor %}
+        </ul>
+        {% else %}
+            <p>No Receipts are available.</p>
+        {% endif %}
+    </div>
+    <div class="menu-link"><a href="menu">返回</a></div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MENU</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'menu.css' %}">
+</head>
+<body>
+    <h1>区块链账款管理系统</h1>
+    <div class="menu">
+        <div class="menu-block"><div><a href="queryCom">公司查询</a></div></div>
+        <div class="menu-block"><a href="registerCom">公司注册</a></div>
+        <div class="menu-block"><a href="eraseCom">公司注销</a></div>
+        <div class="menu-block"><a href="queryReceipt">账款查询</a></div>
+        <div class="menu-block"><a href="queryReceiptOfCom">公司账款查询</a></div>
+        <div class="menu-block"><a href="createReceipt">账款创建</a></div>
+        <div class="menu-block"><a href="transferReceipt">账款转让</a></div>
+        <div class="menu-block"><a href="deleteReceipt">账款删除</a></div>
+    </div>
+    <div class="login-link"><a href="login">更换账户</a></div>
+    <div class="signature-link"><a href="signature">银行签名（仅供调试）</a></div>
+</body>

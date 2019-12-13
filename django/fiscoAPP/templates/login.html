@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+</head>
+<body>
+    <div class="login-div">
+        {% if error_message %}<p class="warning"><strong>{{ error_message }}</strong></p>{% endif %}
+        <form action="{% url 'login'  %}" method="post">
+            {% csrf_token %}
+            <input class="login-text" type="text" name="Username" placeholder="账户名"/><br/>
+            <input class="login-text" type="text" name="Password" placeholder="密码"/><br/>
+            <input class="login-button" type="submit" value="登录"/><br/>
+            <div class="register-link"><a href="register">注册</a></div>
+        </form>
+    </div>
+</body>

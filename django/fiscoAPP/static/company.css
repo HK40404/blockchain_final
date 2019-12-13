@@ -1,0 +1,44 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    background: url("3.png");
+    background-repeat:no-repeat no-repeat;
+    background-attachment:fixed; 
+    background-size: cover; 
+}
+
+.info-div {
+    width: 800px;
+    height: 400px;
+    position: relative;
+    margin: 0 auto;
+    top: 50%;
+    margin-top: -200px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    padding-top: 40px;
+}
+
+.info-text{
+    width: 700px;
+    height: 30px;
+    margin-top: 30px;
+    margin-left: 20px;
+    border-radius: 6px;
+}
+.menu-link {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 410px;
+}
+
+.menu-link a {
+    color: black;
+}

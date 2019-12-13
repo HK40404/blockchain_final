@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>公司资料</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'company.css' %}">
+</head>
+<body>
+    <div class="info-div">
+        <p class="info-text"><strong>公司名：</strong> <a>{{ name }}</a><p/>
+        <p class="info-text"><strong>持有者地址：</strong> <a>{{ owner }}</a><p/>
+        <p class="info-text"><strong>公司地址：</strong> <a>{{ addr }}</a><p/>
+        <p class="info-text"><strong>公司信用等级：</strong> <a>{{ credit }}</a><p/>
+        <p class="info-text"><strong>公司类型：</strong> <a>{{ type }}</a><p/>
+    </div>
+    <div class="menu-link"><a href="menu">返回</a></div>
+</body>

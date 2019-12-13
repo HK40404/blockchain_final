@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册公司</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'registerCompany.css' %}">
+</head>
+<body>
+    <div class="register-div">
+        <form action="{% url 'registerCom'  %}" method="post">
+            {% if error_message %}<p class="warning"><strong>{{ error_message }}</strong></p>{% endif %}
+            {% csrf_token %}
+            <input class="register-text" type="text" name="name" placeholder="公司名称"/><br/>
+            <input class="register-text" type="text" name="address" placeholder="公司地址"/><br/>
+            <div class="register-choose" >信用等级：<select name="credit"/>
+                <option value="优秀">优秀</option>
+                <option value="良好">良好</option>
+                <option value="一般">一般</option>
+                <option value="较差">较差</option>
+            </select></div>
+            <div class="register-choose" >企业类型：<select name="type"/>
+                <option value="国有">国有</option>
+                <option value="民营">民营</option>
+                <option value="合资">合资</option>
+            </select></div>
+            <div class="register-text" >银行确认：</div>
+            <input class="register-text"  type="text" name="v" placeholder="银行签名:v"/><br/>
+            <input class="register-text"  type="text" name="r" placeholder="银行签名:r"/><br/>
+            <input class="register-text"  type="text" name="s" placeholder="银行签名:s"/><br/>
+            
+            <input class="register-button"  type="submit" value="注册"/>
+        </form>
+    </div>
+    <div class="menu-link"><a href="menu">返回</a></div>
+</body>

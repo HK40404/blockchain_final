@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>账款资料</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'receipt.css' %}">
+</head>
+</head>
+<body>
+    <div class="info-div">
+        <p class="info-text"><strong>账款标题: </strong> <a>{{ title }}</a><p/>
+        <p class="info-text"><strong>欠款公司: </strong> <a>{{ from }}</a><p/>
+        <p class="info-text"><strong>收款公司: </strong> <a>{{ to }}</a><p/>
+        <p class="info-text"><strong>数目: </strong> <a>{{ amount }}</a><p/>
+        <p class="info-text"><strong>创建时间: </strong> <a>{{ createtime }}</a><p/>
+        <p class="info-text"><strong>持续时间: </strong> <a>{{ lasttime }}</a><p/>
+        <p class="info-text"><strong>是否经银行确认: </strong> <a>{{ confirm }}</a><p/>
+        <p class="info-text"><strong>补充: </strong> <a>{{ comment }}</a><p/>
+    </div>
+    <div class="menu-link"><a href="menu">返回</a></div>
+</body>

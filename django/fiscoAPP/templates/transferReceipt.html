@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>转让账款</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'transferReceipt.css' %}">
+</head>
+<body>
+
+    <div class="center-div">
+    {% if error_message %}<p class="warning"><strong>{{ error_message }}</strong></p>{% endif %}
+        <form action="{% url 'transferReceipt'  %}" method="post">
+            {% csrf_token %}
+            <input class="transfer-text" type="text" name="title" placeholder="账款标题"/><br/>
+            <input class="transfer-text" type="text" name="to" placeholder="转让目标公司"/><br/>
+            <input class="transfer-text" type="text" name="amount" placeholder="数目"/><br/>
+            <input class="transfer-text" type="text" name="newtitle" placeholder="新账款标题"/><br/>
+            
+            <input class="transfer-button" type="submit" value="注册"/>
+        </form>
+    </div>
+    <div class="menu-link"><a href="menu">返回</a></div>
+</body>

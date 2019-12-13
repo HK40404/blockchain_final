@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>公司注销</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'eraseCompany.css' %}">
+</head>
+<body>
+    <div class="center-div">
+        {% if error_message %}<p class="warning"><strong>{{ error_message }}</strong></p>{% endif %}
+        
+        <form action="{% url 'eraseCom'  %}" method="post">
+            {% csrf_token %}
+            <input class="erase-text" type="text" name="name" placeholder="公司名"/><br/>
+            <input class="erase-button" type="submit" value="注销"/>
+        </form>
+    </div>
+    <div class="menu-link"><a href="menu">返回</a></div>
+</body>

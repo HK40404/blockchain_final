@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>签名</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'signature.css' %}">
+</head>
+<body>
+    <div class="info-div">
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        
+        <form action="{% url 'signature' %}" method="post">
+            {% csrf_token %}
+            <input class="info-text" type="text" name="info" placeholder="信息"/><br/>
+            <div class="info-text">签名: </div>
+            <p class="info-text">v:<strong>{{ v }}</strong></p>
+            <p class="info-text">r:<strong>{{ r }}</strong></p>
+            <p class="info-text">s:<strong>{{ s }}</strong></p>
+            <input class="info-text" type="submit" value="提交"/>
+        </form>
+    </div>
+</body>
